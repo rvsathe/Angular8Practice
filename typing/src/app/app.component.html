@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">The Typing Challenge</h1>
+
+      <p class="has-text-centered" >
+        <span *ngFor ="let letter of randomSentence.split('');let i=index" [class] = "compareLetters(letter,enteredText[i])">{{letter}}</span>
+      </p>
+      <br/>
+      <div class="field">
+        <input class="input" (input) = onInput($event.target.value)/>
+      </div>
+      <div class="box has-text-centered" *ngIf = "isCorrect" >
+        <h1 class="title">Success!!</h1>
+      </div>
+    </div>
+  </div>
+</div>
